@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "838250578445",
+    "firebase_url": "https://mp-lab06.firebaseio.com",
+    "project_id": "mp-lab06",
+    "storage_bucket": "mp-lab06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838250578445:android:a56b79643998ed855a4b44",
+        "android_client_info": {
+          "package_name": "shv.fit.bstu.mp_lab06"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838250578445-k8l5t6b8cijn8of48qg0ce2co4u9a5rd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqY09xzHljGsGMJWxYix7KeFJJw1ekVeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838250578445-k8l5t6b8cijn8of48qg0ce2co4u9a5rd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
