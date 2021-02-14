@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    th {
+        padding: 12px;
+        text-align: center;
+    }
+
+    td {
+        padding: 12px;
+        text-align: center;
+    }
+
+    tr {
+        width: 200px;
+        cursor: pointer;
+    }
+
+    .selected {
+        background-color: brown;
+        color: #FFF;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    li {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 6px;
+        text-decoration: none;
+    }
+</style>
+
+<h2>Index</h2>
+
+<table border="1" id="table">
+    <caption style="width: 200px; text-align: center; font-size: 20px;">All contacts</caption>
+    <tr>
+        <th>Name</th>
+        <th>Number</th>
+    </tr>
+</table>
+
+<ul>
+    <li><Button class="btn btn-primary" onclick="addNew()">Create new contact</Button></li>
+    <li><Button class="btn btn-primary" onclick="update()">Update contact</Button></li>
+    <li><Button class="btn btn-primary" onclick="deleteContact()">Delete contact</Button></li>
+</ul>
+
+<div class="divclass">
+    <form>
+        <div style="width: 100px">Name : </div><input type="text" name="name" />
+        <br />
+        <div style="width: 100px">Number : </div><input type="text" name="number" />
+        <br />
+    </form>
+    <button id="actionButton" class="btn btn-primary"></button>
+</div>

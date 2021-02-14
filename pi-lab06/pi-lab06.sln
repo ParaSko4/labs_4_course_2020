@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pi-lab06", "pi-lab06\pi-lab06.csproj", "{3C84D878-14BF-4E91-BF95-E2837BCF3511}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonDataMethods", "JsonDataMethods\JsonDataMethods.csproj", "{DF4C2AB0-8EE2-41F2-A640-0489F013CB2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLiteDataMethods", "SQLiteDataMethods\SQLiteDataMethods.csproj", "{BEAF03A6-345C-4F1B-8A3A-426D9AF70EF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceDLL", "InterfaceDLL\InterfaceDLL.csproj", "{348C328C-7D30-4136-8CCE-AAB6298122A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C84D878-14BF-4E91-BF95-E2837BCF3511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C84D878-14BF-4E91-BF95-E2837BCF3511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C84D878-14BF-4E91-BF95-E2837BCF3511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C84D878-14BF-4E91-BF95-E2837BCF3511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF4C2AB0-8EE2-41F2-A640-0489F013CB2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF4C2AB0-8EE2-41F2-A640-0489F013CB2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF4C2AB0-8EE2-41F2-A640-0489F013CB2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF4C2AB0-8EE2-41F2-A640-0489F013CB2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEAF03A6-345C-4F1B-8A3A-426D9AF70EF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEAF03A6-345C-4F1B-8A3A-426D9AF70EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEAF03A6-345C-4F1B-8A3A-426D9AF70EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEAF03A6-345C-4F1B-8A3A-426D9AF70EF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{348C328C-7D30-4136-8CCE-AAB6298122A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{348C328C-7D30-4136-8CCE-AAB6298122A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{348C328C-7D30-4136-8CCE-AAB6298122A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{348C328C-7D30-4136-8CCE-AAB6298122A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B0A662E-6C3D-40D5-A0AD-96DA84199F14}
+	EndGlobalSection
+EndGlobal

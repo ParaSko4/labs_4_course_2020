@@ -1,0 +1,220 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    th {
+        padding: 12px;
+        text-align: center;
+    }
+
+    td {
+        padding: 12px;
+        text-align: center;
+    }
+
+    tr {
+        width: 200px;
+        cursor: pointer;
+    }
+
+    .selected {
+        background-color: brown;
+        color: #FFF;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    li {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 6px;
+        text-decoration: none;
+    }
+</style>
+
+<h2>Index</h2>
+
+<table border="1" id="table">
+    <caption style="width: 200px; text-align: center; font-size: 20px;">All contacts</caption>
+    <tr>
+        <th>Name</th>
+        <th>Number</th>
+    </tr>
+</table>
+
+<ul>
+    <li><Button class="btn btn-primary" onclick="addNew()">Create new contact</Button></li>
+    <li><Button class="btn btn-primary" onclick="update()">Update contact</Button></li>
+    <li><Button class="btn btn-primary" onclick="deleteContact()">Delete contact</Button></li>
+</ul>
+
+<div class="divclass">
+    <form>
+        <div style="width: 100px">Name : </div><input type="text" name="name" />
+        <br />
+        <div style="width: 100px">Number : </div><input type="text" name="number" />
+        <br />
+    </form>
+    <button id="actionButton" class="btn btn-primary"></button>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+<script>
+    var table = document.getElementById('table')
+    var selected = table.getElementsByClassName('selected');
+
+    let constClass = "";
+    let id;
+
+    function fillTable() {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:50026/GET/TS",
+            context: document.body
+        }).done(function (msg) {
+            var table = document.getElementById('table');
+
+            var rl = table.rows.length;
+
+            for (var i = rl - 1; i > 0; i--) {
+                table.deleteRow(i);
+            }
+
+            msg.forEach(function (rowData) {
+                var row = table.insertRow(1);
+
+                row.className = rowData.id;
+
+                var newCell = row.insertCell(0);
+                newCell.appendChild(document.createTextNode(rowData.name));
+
+                newCell = row.insertCell(1);
+                newCell.appendChild(document.createTextNode(rowData.number));
+            });
+        });
+    }
+
+    function addNew() {
+        if ($(".divclass").css('visibility') == 'visible') {
+            clearActionContent();
+        } else {
+            $(".divclass").attr("style", "visibility: visible")
+            $("#actionButton").attr("onclick", "addNewSave()");
+            $("#actionButton").html('Add new contact');
+        }
+    }
+
+    function addNewSave() {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:50026/POST/TS",
+            data: $("form").serialize(),
+            dataType: "json",
+            success: function() {
+                fillTable();
+                clearActionContent();
+            }
+        });
+    }
+
+    function update() {
+        if (id != null) {
+            if ($(".divclass").css('visibility') == 'visible') {
+                clearActionContent();
+            } else {
+                $(".divclass").attr("style", "visibility: visible")
+
+                $("#actionButton").attr("onclick", "updateSave()");
+                $("#actionButton").html('Save changes');
+
+                loadContactInfo();
+            }
+        } else {
+            alert("choise contact");
+        }
+    }
+
+    function updateSave() {
+        if (id != null) {
+            $.ajax({
+                type: "PUT",
+                url: "http://localhost:50026/PUT/TS/" + id,
+                data: $("form").serialize(),
+                dataType: "json",
+                success: function () {
+                    fillTable();
+                    clearActionContent();
+                }
+            });
+        } else {
+            alert("choise contact");
+        }
+    }
+
+    function deleteContact() {
+        if (id != null) {
+            clearActionContent();
+            $.ajax({
+                type: "DELETE",
+                url: "http://localhost:50026/DELETE/TS/" + id,
+                success: function () {
+                    fillTable();
+                }
+            });
+        } else {
+            alert("choise contact");
+        }
+    }
+
+    function loadContactInfo() {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:50026/GET/TS/" + id,
+            success: function (data) {
+                var inputs = $('input');
+
+                inputs[0].value = data.name;
+                inputs[1].value = data.number;
+            }
+        });
+    }
+
+    function clearActionContent() {
+        $(".divclass").attr("style", "visibility: hidden")
+
+        $('form').find("input[type=text], textarea").val("");
+        $("#actionButton").attr("onclick", "");
+        $("#actionButton").html('');
+    }
+
+    function highlight(e) {
+        if (selected[0])
+            selected[0].className = constClass;
+
+        id = e.target.parentNode.className;
+        constClass = e.target.parentNode.className;
+        e.target.parentNode.className = 'selected';
+
+        if ($(".divclass").css('visibility') == 'visible') {
+            loadContactInfo();
+        }
+    }
+
+    window.onload = function () {
+        $(".divclass").attr("style", "visibility: hidden")
+        fillTable();
+
+        table.onclick = highlight;
+    }
+</script>

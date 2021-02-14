@@ -1,0 +1,25 @@
+﻿@helper ValueFields(bool isAdd, string url, InterfaceDLL.Contacts contact)
+{
+    if (isAdd)
+    {
+        <form action="@url" method="post">
+            <div style="width: 100px">Name : </div><input type="text" name="name" />
+            <br />
+            <div style="width: 100px">Number : </div><input type="text" name="number" />
+            <br />
+            <input type="submit" value="Add new contact" />
+        </form>
+    }
+    else
+    {
+        url += "?id=" + contact.id;
+        
+        <form action="@url" method="post">
+            <div style="width: 100px">Name : </div><input type="text" name="name" value="@contact.name" />
+            <br />
+            <div style="width: 100px">Number : </div><input type="text" name="number" value="@contact.number" />
+            <br />
+            <input type="submit" value="Save changes" />
+        </form>
+    }
+}

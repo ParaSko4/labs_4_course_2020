@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+</head>
+<body>
+    <header>
+        <h2>Header</h2>
+    </header>
+
+    <div>
+        @RenderBody()
+        <hr />
+
+        <footer>
+            <p>Footer</p>
+        </footer>
+    </div>
+
+    @helper ValueFields(string url)
+    {
+        <form action="@url" method="post">
+            <div style="width: 100px">Name : </div><input type="text" name="name" />
+            <br />
+            <div style="width: 100px">Number : </div><input type="text" name="number" />
+            <br />
+            <input type="submit" value="Add new contact" />
+        </form>
+    }
+</body>
+</html>

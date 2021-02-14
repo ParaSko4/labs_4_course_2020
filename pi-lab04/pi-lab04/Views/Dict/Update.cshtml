@@ -1,0 +1,16 @@
+﻿@model pi_lab04.Models.Contacts
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+<br />
+<h3>Update your data : </h3>
+<br />
+<form action="/4/Dict/UpdateSave?id=@Model.id" method="post">
+    <div style="width: 100px">Name : </div><input type="text" name="name" value="@Model.name"/>
+    <br />
+    <div style="width: 100px">Number : </div><input type="text" name="number"  value="@Model.number"/>
+    <br />
+    <input type="submit" value="Save changes" />
+</form>

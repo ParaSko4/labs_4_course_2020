@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pi-lab08a", "pi-lab08a\pi-lab08a.csproj", "{D8A21D68-7FF4-447A-9ED9-16A3BDD80C6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pi-lab08a-api", "pi-lab08a-api\pi-lab08a-api.csproj", "{6EE927B3-C1DE-424A-8221-7E6605B02A77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8A21D68-7FF4-447A-9ED9-16A3BDD80C6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A21D68-7FF4-447A-9ED9-16A3BDD80C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A21D68-7FF4-447A-9ED9-16A3BDD80C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A21D68-7FF4-447A-9ED9-16A3BDD80C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EE927B3-C1DE-424A-8221-7E6605B02A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE927B3-C1DE-424A-8221-7E6605B02A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE927B3-C1DE-424A-8221-7E6605B02A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE927B3-C1DE-424A-8221-7E6605B02A77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62F556F8-B258-4F9C-B1A0-05105B45EC81}
+	EndGlobalSection
+EndGlobal

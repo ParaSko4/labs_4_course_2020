@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Delete";
+}
+    <style>
+        th {
+            padding: 12px;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        tr {
+            width: 200px;
+            cursor: pointer;
+        }
+
+        .selected {
+            background-color: brown;
+            color: #FFF;
+        }
+    </style>
+
+<h2>Delete</h2>
+<br />
+<form action="@Url.Action("DeleteSave")?id=@ViewBag.id" method="post">
+    You sure wont delete this one ?
+    <br />
+    <br />
+    <input type="submit" value="Yes, i'm sure" />
+</form>

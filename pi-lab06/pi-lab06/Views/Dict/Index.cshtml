@@ -1,0 +1,61 @@
+﻿@model List<InterfaceDLL.Contacts>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Phonebook";
+}
+<style>
+    th {
+        padding: 12px;
+    }
+
+    td {
+        padding: 12px;
+        text-align: center;
+    }
+
+    tr {
+        width: 200px;
+        cursor: pointer;
+    }
+
+    .selected {
+        background-color: brown;
+        color: #FFF;
+    }
+</style>
+
+@Html.Partial("PartialViewList", Model)
+<br />
+<h3>Functions of Phonebook</h3>
+<br />
+<a href="@Url.Action("Add")">Add new contact</a>
+<br />
+<a id="update" href="@Url.Action("Update")">Update contact</a>
+<br />
+<a id="delete" href="@Url.Action("Delete")">Delete contact</a>
+
+<script>
+    var table = document.getElementById('table')
+    var selected = table.getElementsByClassName('selected');
+
+    let updateHref = document.getElementById('update').href;
+    let deleteHref = document.getElementById('delete').href;
+
+    let constClass = "";
+
+    function highlight(e) {
+        if (selected[0])
+            selected[0].className = constClass;
+
+        let id = e.target.parentNode.className;
+        constClass = e.target.parentNode.className;
+        e.target.parentNode.className = 'selected';
+
+        document.getElementById('update').href = updateHref + '?id=' + id;
+        document.getElementById('delete').href = deleteHref + '?id=' + id;
+    }
+
+    window.onload = function () {
+        table.onclick = highlight;
+    }
+</script>

@@ -1,0 +1,11 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+<br />
+<h3>Enter your data : </h3>
+<br />
+@HelperMethods.ValueFields(true, Url.Action("AddSave"), null)

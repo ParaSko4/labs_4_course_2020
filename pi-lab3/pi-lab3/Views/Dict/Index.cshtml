@@ -1,0 +1,73 @@
+﻿@model List<pi_lab3.Models.ContactModel>
+@{
+    ViewBag.Title = "Phonebook";
+}
+<style>
+    th {
+        padding: 12px;
+    }
+
+    td {
+        padding: 12px;
+        text-align: center;
+    }
+
+    tr {
+        width: 200px;
+        cursor: pointer;
+    }
+
+    .selected {
+        background-color: brown;
+        color: #FFF;
+    }
+</style>
+
+<h2>Phonebook</h2>
+<br />
+<br />
+<table border="1" id="table">
+    <caption style="width: 200px; text-align: center; font-size: 20px;">All contacts</caption>
+    <tr>
+        <th>Name</th>
+        <th>Number</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr class="@item.Id"><td>@item.Name</td><td>@item.Number</td></tr>
+    }
+</table>
+<br />
+<h3>Functions of Phonebook</h3>
+<br />
+<a href="@Url.Action("Add")">Add new contact</a>
+<br />
+<a id="update" href="@Url.Action("Update")">Update contact</a>
+<br />
+<a id="delete" href="@Url.Action("Delete")">Delete contact</a>
+
+<script>
+    var table = document.getElementById('table')
+    var selected = table.getElementsByClassName('selected');
+
+    let updateHref = document.getElementById('update').href;
+    let deleteHref = document.getElementById('delete').href;
+
+    let constClass = "";
+
+    function highlight(e) {
+        if (selected[0])
+            selected[0].className = constClass;
+
+        let id = e.target.parentNode.className;
+        constClass = e.target.parentNode.className;
+        e.target.parentNode.className = 'selected';
+
+        document.getElementById('update').href = updateHref + '?id=' + id;
+        document.getElementById('delete').href = deleteHref + '?id=' + id;
+    }
+
+    window.onload = function () {
+        table.onclick = highlight;
+    }
+</script>

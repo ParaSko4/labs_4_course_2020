@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --user-data-dir="C:/Edge dev session" --disable-web-security http://localhost:60938/
